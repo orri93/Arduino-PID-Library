@@ -60,7 +60,11 @@ class PID
 	int GetMode();						  //  inside the PID.
 	int GetDirection();					  //
 
+#ifdef GOS_ARDUINO_UNIT_TESTING
+protected:
+#else
   private:
+#endif
 	void Initialize();
 	
 	double dispKp;				// * we'll hold on to the tuning parameters in user-entered 
